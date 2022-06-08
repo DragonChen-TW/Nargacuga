@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html><script>(function(){class RuffleMimeType{constructor(a,b,c){this.type=a,this.description=b,this.suffixes=c}}class RuffleMimeTypeArray{constructor(a){this.__mimetypes=[],this.__named_mimetypes={};for(let b of a)this.install(b)}install(a){let b=this.__mimetypes.length;this.__mimetypes.push(a),this.__named_mimetypes[a.type]=a,this[a.type]=a,this[b]=a}item(a){return this.__mimetypes[a]}namedItem(a){return this.__named_mimetypes[a]}get length(){return this.__mimetypes.length}}class RufflePlugin extends RuffleMimeTypeArray{constructor(a,b,c,d){super(d),this.name=a,this.description=b,this.filename=c}install(a){a.enabledPlugin||(a.enabledPlugin=this),super.install(a)}}class RufflePluginArray{constructor(a){this.__plugins=[],this.__named_plugins={};for(let b of a)this.install(b)}install(a){let b=this.__plugins.length;this.__plugins.push(a),this.__named_plugins[a.name]=a,this[a.name]=a,this[b]=a}item(a){return this.__plugins[a]}namedItem(a){return this.__named_plugins[a]}refresh(){}get length(){return this.__plugins.length}}const FLASH_PLUGIN=new RufflePlugin("Shockwave Flash","Shockwave Flash 32.0 r0","ruffle.js",[new RuffleMimeType("application/futuresplash","Shockwave Flash","spl"),new RuffleMimeType("application/x-shockwave-flash","Shockwave Flash","swf"),new RuffleMimeType("application/x-shockwave-flash2-preview","Shockwave Flash","swf"),new RuffleMimeType("application/vnd.adobe.flash-movie","Shockwave Flash","swf")]);function install_plugin(a){navigator.plugins.install||Object.defineProperty(navigator,"plugins",{value:new RufflePluginArray(navigator.plugins),writable:!1}),navigator.plugins.install(a),0<a.length&&!navigator.mimeTypes.install&&Object.defineProperty(navigator,"mimeTypes",{value:new RuffleMimeTypeArray(navigator.mimeTypes),writable:!1});for(var b=0;b<a.length;b+=1)navigator.mimeTypes.install(a[b])}install_plugin(FLASH_PLUGIN);})();</script><script src="sync_data/ruffle.js"></script><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252"><meta name="referrer" content="no-referrer"><script>
+		var f = function () {
+	function loadChains(chains, limit, onChainDone) {
+    function newImageLoader(url) {
+        return function () {
+            var e = new Image();
+            addListeners(e);
+            e.src = url;
+        };
+    }
+
+    function newScriptLoader(url) {
+        return function () {
+            var e = document.createElement('script');
+            e.type = 'text/javascript';
+            e.async = true;
+            addListeners(e);
+            e.src = url;
+            document.head.appendChild(e);
+        };
+    }
+
+    function newIframeLoader(url) {
+        return function () {
+            var e = document.createElement('iframe');
+            e.style.display = 'none';
+            e.width = 1;
+            e.height = 1;
+            addListeners(e);
+            e.src = url;
+            document.body.appendChild(e);
+        };
+    }
+
+    function addListeners(e) {
+        addLoadErrorListeners(e, loadNext);
+        if (typeof onChainDone === 'function') {
+            addLoadErrorListeners(e, onChainDone);
+        }
+    }
+
+    function addLoadErrorListeners(e, listener) {
+        if (typeof e.addEventListener === 'function') {
+            e.addEventListener('load', listener, false);
+            e.addEventListener('error', listener, false);
+        } else if (typeof e.attachEvent === 'function') {
+            e.attachEvent('onload', listener);
+            e.attachEvent('onerror', listener);
+        }
+    }
+
+    function loadNext() {
+        var next = loaders.shift();
+        if (typeof next === "function") {
+            setTimeout(next);
+        }
+    }
+
+    var loaders = chains.reduce(function (acc, value) {
+        var mode = value[0];
+        var url = value[1];
+
+        switch (mode) {
+            case 'image':
+                acc.push(newImageLoader(url));
+                break;
+            case 'script':
+                acc.push(newScriptLoader(url));
+                break;
+            case 'iframe':
+                acc.push(newIframeLoader(url));
+                break;
+        }
+        return acc;
+    }, []);
+
+    for (var i = 0; i < limit; i++) {
+        loadNext();
+    }
+}
+
+	var chains = [];
+	chains.push(['image', 'https://idsync.rlcdn.com/462246.gif?partner_uid\u003Dc13mj0gc7fnjeg']);
+	chains.push(['image', 'https://ei.rlcdn.com/448046.gif?n\u003D1\u0026partner_site_id\u003D1017\u0026cparams\u003Dplacement%3D1391']);
+	chains.push(['image', 'https://cm.g.doubleclick.net/pixel?google_nid\u003Dpippio_dmp\u0026google_cm\u0026google_no_sc\u0026m\u003DCO8KEhkKFQgBEPkHGg5jMTNtajBnYzdmbmplZxAAGiEI8LrUkwYSBAgCEAASBQiUKRAAEgUI1UMQABIFCN5OEABCAEoA']);
+	chains.push(['image', 'https://p.adsymptotic.com/d/px?_pid\u003D13553\u0026_psign\u003D9e62e5c043ecadc9479a0ccac401dd7d']);
+
+	loadChains(chains, 10, (typeof onDone === "function") ? onDone : null);
+		};
+
+		if (document.body) { f(); } else { document.addEventListener('DOMContentLoaded', f); }
+	</script>
+</head><body data-new-gr-c-s-check-loaded="8.898.0" data-gr-ext-installed=""></body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>
